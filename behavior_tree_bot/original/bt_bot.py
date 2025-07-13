@@ -6,7 +6,6 @@
 // starting point, or you can throw it out entirely and replace it with your
 // own.
 """
-#from behavior_tree_bot.bt_nodes import Selector, Sequence, Action, Check, Inverter, AlwaysSucceed, LoopUntilFail
 import logging, traceback, sys, os, inspect
 logging.basicConfig(filename=__file__[:-3] +'.log', filemode='w', level=logging.DEBUG)
 currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
@@ -41,45 +40,6 @@ def setup_behavior_tree():
 
     logging.info('\n' + root.tree_to_string())
     return root
-
-# def setup_behavior_tree():
-#     root = Selector(name='Refined Hybrid Strategy')
-
-#     # 1. Aggressive opening: rush enemy if we're ahead
-#     rush_sequence = Sequence(name='Rush If Stronger')
-#     rush_sequence.child_nodes = [
-#         Check(have_largest_fleet),
-#         Action(attack_closest_enemy_planet)
-#     ]
-
-#     # 2. Looping expansion: spread to neutral planets repeatedly
-#     expand_loop = LoopUntilFail(Action(spread_to_weakest_neutral_planet), max_iterations=5)
-
-
-#     # 3. Safe attack: only attack if enemy isn't stronger
-#     safe_attack_sequence = Sequence(name='Safe Attack')
-#     safe_attack_sequence.child_nodes = [
-#         Inverter(Check(is_enemy_stronger)),
-#         Action(attack_weakest_enemy_planet)
-#     ]
-
-#     # 4. Optional reinforcement: send ships to weak planets if possible
-#     reinforce_optional = AlwaysSucceed(Action(reinforce_weakest_friendly_planet))
-
-#     # 5. Emergency fallback: desperation attack if nothing else worked
-#     desperate_attack = Action(attack_closest_enemy_planet)
-
-#     # Priority order matters here
-#     root.child_nodes = [
-#         rush_sequence,           # Smart early aggression
-#         expand_loop,             # Rapid expansion
-#         safe_attack_sequence,    # Safe midgame offense
-#         reinforce_optional,      # Passive defense (never blocks)
-#         desperate_attack         # Keeps bot from stalling
-#     ]
-
-#     logging.info('\n' + root.tree_to_string())
-#     return root
 
 # You don't need to change this function
 def do_turn(state):
