@@ -39,31 +39,3 @@ def spread_to_weakest_neutral_planet(state):
     else:
         # (4) Send half the ships from my strongest planet to the weakest enemy planet.
         return issue_order(state, strongest_planet.ID, weakest_planet.ID, strongest_planet.num_ships / 2)
-
-def reinforce_weakest_friendly_planet(state):
-    planets = state.my_planets()
-    if len(planets) < 2:
-        return False
-
-    source = max(planets, key=lambda p: p.num_ships)
-    dest = min(planets, key=lambda p: p.num_ships)
-
-    if source.ID == dest.ID or source.num_ships < 10:
-        return False
-
-    return issue_order(state, source.ID, dest.ID, source.num_ships / 2)
-
-
-def attack_closest_enemy_planet(state):
-    my_planets = state.my_planets()
-    enemy_planets = state.enemy_planets()
-    if not my_planets or not enemy_planets:
-        return False
-
-    source = max(my_planets, key=lambda p: p.num_ships)
-    closest = min(enemy_planets, key=lambda e: state.distance(source.ID, e.ID))
-
-    if source.num_ships < 10:
-        return False
-
-    return issue_order(state, source.ID, closest.ID, source.num_ships / 2)

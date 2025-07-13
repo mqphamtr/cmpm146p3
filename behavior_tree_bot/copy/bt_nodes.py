@@ -90,3 +90,61 @@ class Action(Node):
 
     def __str__(self):
         return self.__class__.__name__ + ': ' + self.action_function.__name__
+
+class LoopUntilFail(Node):
+    def __init__(self, child, max_iterations=10):
+        self.child = child
+        self.max_iterations = max_iterations
+
+    @log_execution
+    def execute(self, state):
+        count = 0
+        while count < self.max_iterations:
+            if not self.child.execute(state):
+                return True  # exit loop when child fails
+            count += 1
+        return True  # still considered success
+
+    def __str__(self):
+        return f'LoopUntilFail (max {self.max_iterations})'
+
+    def tree_to_string(self, indent=0):
+        string = '| ' * indent + str(self) + '\n'
+        string += self.child.tree_to_string(indent + 1)
+        return string
+
+
+
+class Inverter(Node):
+    def __init__(self, child):
+        self.child = child
+
+    @log_execution
+    def execute(self, state):
+        return not self.child.execute(state)
+
+    def __str__(self):
+        return 'Inverter'
+
+    def tree_to_string(self, indent=0):
+        string = '| ' * indent + str(self) + '\n'
+        string += self.child.tree_to_string(indent + 1)
+        return string
+
+
+class AlwaysSucceed(Node):
+    def __init__(self, child):
+        self.child = child
+
+    @log_execution
+    def execute(self, state):
+        self.child.execute(state)
+        return True
+
+    def __str__(self):
+        return 'AlwaysSucceed'
+
+    def tree_to_string(self, indent=0):
+        string = '| ' * indent + str(self) + '\n'
+        string += self.child.tree_to_string(indent + 1)
+        return string
