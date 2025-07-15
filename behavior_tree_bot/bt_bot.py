@@ -21,14 +21,15 @@ from planet_wars import PlanetWars, finish_turn
 
 def setup_behavior_tree():
     tree = None
-    tree = setup_behavior_tree1()              #default
-    # tree = setup_behavior_tree2()              #balanced; hybrid
+    # tree = setup_behavior_tree1()              #default
+    tree = setup_behavior_tree2()              #balanced; hybrid
     # tree = setup_behavior_tree3()              #greedy; prioritize weakest neutral planets, then attack weakest planets 
     # tree = setup_behavior_tree4()              #conservative; if enemy is weaker, attack the weakest planet; else if neurtal planets, get weakest; else send help to weak ally
     # tree =setup_behavior_tree5()              #aggressive; Attack closest enemies; if can't attack, colonize; else, attack the weakest planet
     return tree
 # You have to improve this tree or create an entire new one that is capable
 # of winning against all the 5 opponent bots
+
 def setup_behavior_tree1():
 
     # Top-down construction of behavior tree
@@ -52,32 +53,26 @@ def setup_behavior_tree1():
 def setup_behavior_tree2():
     root = Selector(name='Refined Hybrid Strategy')
 
-    # 1. Aggressive opening: rush enemy if we're ahead
-    rush_sequence = Sequence(name='Rush If Stronger')
+    rush_sequence = Sequence(name='Rush If Stronger')                                           # 1. Aggressive opening: rush enemy if we're ahead
     rush_sequence.child_nodes = [
         Check(have_largest_fleet),
         Action(attack_closest_enemy_planet)
     ]
 
-    # 2. Looping expansion: spread to neutral planets repeatedly
-    expand_loop = LoopUntilFail(Action(spread_to_weakest_neutral_planet), max_iterations=5)
+    expand_loop = LoopUntilFail(Action(spread_to_weakest_neutral_planet), max_iterations=5)     # 2. Looping expansion: spread to neutral planets repeatedly
 
-
-    # 3. Safe attack: only attack if enemy isn't stronger
-    safe_attack_sequence = Sequence(name='Safe Attack')
+    safe_attack_sequence = Sequence(name='Safe Attack')                                         # 3. Safe attack: only attack if enemy isn't stronger
     safe_attack_sequence.child_nodes = [
         Inverter(Check(is_enemy_stronger)),
         Action(attack_weakest_enemy_planet)
     ]
+    
+    reinforce_optional = AlwaysSucceed(Action(reinforce_weakest_friendly_planet))               # 4. Optional reinforcement: send ships to weak planets if possible
 
-    # 4. Optional reinforcement: send ships to weak planets if possible
-    reinforce_optional = AlwaysSucceed(Action(reinforce_weakest_friendly_planet))
+    desperate_attack = Action(attack_closest_enemy_planet)                                      # 5. Emergency fallback: desperation attack if nothing else worked
 
-    # 5. Emergency fallback: desperation attack if nothing else worked
-    desperate_attack = Action(attack_closest_enemy_planet)
-
-    # Priority order matters here
-    root.child_nodes = [
+    
+    root.child_nodes = [                                                                        # Priority order matters here
         rush_sequence,           # Smart early aggression
         expand_loop,             # Rapid expansion
         safe_attack_sequence,    # Safe midgame offense
@@ -110,8 +105,6 @@ def setup_behavior_tree3():
     return root
 
 def setup_behavior_tree4():
-    from behavior_tree_bot.bt_nodes import Inverter, AlwaysSucceed, Check, Action, Selector, Sequence
-
     root = Selector(name='Conservative Strategy')
 
     # Attack only if enemy is NOT stronger

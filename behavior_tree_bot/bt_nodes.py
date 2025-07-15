@@ -1,7 +1,6 @@
 from copy import deepcopy
 import logging
 
-
 def log_execution(fn):
     def logged_fn(self, state):
         logging.debug('Executing:' + str(self))
@@ -9,7 +8,6 @@ def log_execution(fn):
         logging.debug('Result: ' + str(self) + ' -> ' + ('Success' if result else 'Failure'))
         return result
     return logged_fn
-
 
 ############################### Base Classes ##################################
 class Node:
@@ -22,7 +20,7 @@ class Node:
     def copy(self):
         return deepcopy(self)
 
-
+############################### Composite Base Class ##################################
 class Composite(Node):
     def __init__(self, child_nodes=[], name=None):
         self.child_nodes = child_nodes
@@ -32,40 +30,39 @@ class Composite(Node):
         raise NotImplementedError
 
     def __str__(self):
-        return self.__class__.__name__ + ': ' + self.name if self.name else ''
+        return self.__class__.__name__ + ': ' + self.name if self.name else self.__class__.__name__
 
-    def tree_to_string(self, indent=0):
+    def tree_to_string(self, indent=0, visited=None):
+        if visited is None:
+            visited = set()
+        if id(self) in visited:
+            return '| ' * indent + '[CYCLE DETECTED: ' + str(self) + ']\n'
+        visited.add(id(self))
+
         string = '| ' * indent + str(self) + '\n'
         for child in self.child_nodes:
             if hasattr(child, 'tree_to_string'):
-                string += child.tree_to_string(indent + 1)
+                string += child.tree_to_string(indent + 1, visited)
             else:
                 string += '| ' * (indent + 1) + str(child) + '\n'
         return string
-
 
 ############################### Composite Nodes ##################################
 class Selector(Composite):
     @log_execution
     def execute(self, state):
         for child_node in self.child_nodes:
-            success = child_node.execute(state)
-            if success:
+            if child_node.execute(state):
                 return True
-        else:  # for loop completed without success; return failure
-            return False
-
+        return False
 
 class Sequence(Composite):
     @log_execution
     def execute(self, state):
         for child_node in self.child_nodes:
-            continue_execution = child_node.execute(state)
-            if not continue_execution:
+            if not child_node.execute(state):
                 return False
-        else:  # for loop completed without failure; return success
-            return True
-
+        return True
 
 ############################### Leaf Nodes ##################################
 class Check(Node):
@@ -79,6 +76,8 @@ class Check(Node):
     def __str__(self):
         return self.__class__.__name__ + ': ' + self.check_function.__name__
 
+    def tree_to_string(self, indent=0, visited=None):
+        return '| ' * indent + str(self) + '\n'
 
 class Action(Node):
     def __init__(self, action_function):
@@ -91,6 +90,10 @@ class Action(Node):
     def __str__(self):
         return self.__class__.__name__ + ': ' + self.action_function.__name__
 
+    def tree_to_string(self, indent=0, visited=None):
+        return '| ' * indent + str(self) + '\n'
+
+############################### Decorators ##################################
 class LoopUntilFail(Node):
     def __init__(self, child, max_iterations=10):
         self.child = child
@@ -101,19 +104,26 @@ class LoopUntilFail(Node):
         count = 0
         while count < self.max_iterations:
             if not self.child.execute(state):
-                return True  # exit loop when child fails
+                return True
             count += 1
-        return True  # still considered success
+        return True
 
     def __str__(self):
         return f'LoopUntilFail (max {self.max_iterations})'
 
-    def tree_to_string(self, indent=0):
+    def tree_to_string(self, indent=0, visited=None):
+        if visited is None:
+            visited = set()
+        if id(self) in visited:
+            return '| ' * indent + '[CYCLE DETECTED: ' + str(self) + ']\n'
+        visited.add(id(self))
+
         string = '| ' * indent + str(self) + '\n'
-        string += self.child.tree_to_string(indent + 1)
+        if hasattr(self.child, 'tree_to_string'):
+            string += self.child.tree_to_string(indent + 1, visited)
+        else:
+            string += '| ' * (indent + 1) + str(self.child) + '\n'
         return string
-
-
 
 class Inverter(Node):
     def __init__(self, child):
@@ -126,11 +136,19 @@ class Inverter(Node):
     def __str__(self):
         return 'Inverter'
 
-    def tree_to_string(self, indent=0):
-        string = '| ' * indent + str(self) + '\n'
-        string += self.child.tree_to_string(indent + 1)
-        return string
+    def tree_to_string(self, indent=0, visited=None):
+        if visited is None:
+            visited = set()
+        if id(self) in visited:
+            return '| ' * indent + '[CYCLE DETECTED: ' + str(self) + ']\n'
+        visited.add(id(self))
 
+        string = '| ' * indent + str(self) + '\n'
+        if hasattr(self.child, 'tree_to_string'):
+            string += self.child.tree_to_string(indent + 1, visited)
+        else:
+            string += '| ' * (indent + 1) + str(self.child) + '\n'
+        return string
 
 class AlwaysSucceed(Node):
     def __init__(self, child):
@@ -144,7 +162,16 @@ class AlwaysSucceed(Node):
     def __str__(self):
         return 'AlwaysSucceed'
 
-    def tree_to_string(self, indent=0):
+    def tree_to_string(self, indent=0, visited=None):
+        if visited is None:
+            visited = set()
+        if id(self) in visited:
+            return '| ' * indent + '[CYCLE DETECTED: ' + str(self) + ']\n'
+        visited.add(id(self))
+
         string = '| ' * indent + str(self) + '\n'
-        string += self.child.tree_to_string(indent + 1)
+        if hasattr(self.child, 'tree_to_string'):
+            string += self.child.tree_to_string(indent + 1, visited)
+        else:
+            string += '| ' * (indent + 1) + str(self.child) + '\n'
         return string
