@@ -53,32 +53,26 @@ def setup_behavior_tree1():
 def setup_behavior_tree2():
     root = Selector(name='Attack and Defend strategy')
 
-    rush_sequence = Sequence(name='Attack when ahead')
-    rush_sequence.child_nodes = [
+    rush = Sequence(name='Attack when ahead')
+    rush.child_nodes = [
         Check(have_largest_fleet),
         Action(attack_closest_enemy_planet)
     ]
 
-    expand_loop = LoopUntilFail(Action(spread_to_weakest_neutral_planet), max_iterations=5)     # 2. Looping expansion: spread to neutral planets repeatedly
+    expand_loop = LoopUntilFail(Action(spread_to_weakest_neutral_planet), max_iterations=5)     # Looping expansion: spread to neutral planets repeatedly
 
-    safe_attack_sequence = Sequence(name='attack if enemy is not stronger')
-    safe_attack_sequence.child_nodes = [
+    safe_attack = Sequence(name='attack if enemy is not stronger')
+    safe_attack.child_nodes = [
         Inverter(Check(is_enemy_stronger)),
         Action(attack_weakest_enemy_planet)
     ]
     
-    reinforce_optional = AlwaysSucceed(Action(reinforce_weakest_friendly_planet))               # give some ships to weak ally
+    reinforce = AlwaysSucceed(Action(reinforce_weakest_friendly_planet))               # give some ships to weak ally
 
     desperate_attack = Action(attack_closest_enemy_planet)                                      #when pushed to a corner, desperate attack the enemy
 
     
-    root.child_nodes = [                                                                        # Priority order matters here
-        rush_sequence,              #early attempt to get rid of closest enemy        
-        expand_loop,                #try to capture 5 neutral planets
-        safe_attack_sequence,       #attack weakest enemy, if we are not weaker
-        reinforce_optional,         #send support to our weakest ally
-        desperate_attack            #go out fighting
-    ]
+    root.child_nodes = [rush, expand_loop, safe_attack, reinforce, desperate_attack]
 
     logging.info('\n' + root.tree_to_string())
     return root

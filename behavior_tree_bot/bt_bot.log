@@ -1,11 +1,11 @@
 INFO:root:
-Selector: Refined Hybrid Strategy
-| Sequence: Rush If Stronger
+Selector: Attack and Defend strategy
+| Sequence: Attack when ahead
 | | Check: have_largest_fleet
 | | Action: attack_closest_enemy_planet
 | LoopUntilFail (max 5)
 | | Action: spread_to_weakest_neutral_planet
-| Sequence: Safe Attack
+| Sequence: attack if enemy is not stronger
 | | Inverter
 | | | Check: is_enemy_stronger
 | | Action: attack_weakest_enemy_planet
@@ -13,11 +13,11 @@ Selector: Refined Hybrid Strategy
 | | Action: reinforce_weakest_friendly_planet
 | Action: attack_closest_enemy_planet
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Failure
-DEBUG:root:Result: Sequence: Rush If Stronger -> Failure
+DEBUG:root:Result: Sequence: Attack when ahead -> Failure
 DEBUG:root:Executing:LoopUntilFail (max 5)
 DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
 DEBUG:root:Order:1 17 50.0
@@ -31,26 +31,26 @@ DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Success
 DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
 DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
 DEBUG:root:Result: LoopUntilFail (max 5) -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Failure
-DEBUG:root:Result: Sequence: Rush If Stronger -> Failure
+DEBUG:root:Result: Sequence: Attack when ahead -> Failure
 DEBUG:root:Executing:LoopUntilFail (max 5)
 DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
 DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
 DEBUG:root:Result: LoopUntilFail (max 5) -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Failure
-DEBUG:root:Result: Sequence: Rush If Stronger -> Failure
+DEBUG:root:Result: Sequence: Attack when ahead -> Failure
 DEBUG:root:Executing:LoopUntilFail (max 5)
 DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
 DEBUG:root:Order:1 17 11.5
@@ -58,26 +58,26 @@ DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Success
 DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
 DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
 DEBUG:root:Result: LoopUntilFail (max 5) -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Failure
-DEBUG:root:Result: Sequence: Rush If Stronger -> Failure
+DEBUG:root:Result: Sequence: Attack when ahead -> Failure
 DEBUG:root:Executing:LoopUntilFail (max 5)
 DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
 DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
 DEBUG:root:Result: LoopUntilFail (max 5) -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Failure
-DEBUG:root:Result: Sequence: Rush If Stronger -> Failure
+DEBUG:root:Result: Sequence: Attack when ahead -> Failure
 DEBUG:root:Executing:LoopUntilFail (max 5)
 DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
 DEBUG:root:Order:1 17 11.0
@@ -85,799 +85,799 @@ DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Success
 DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
 DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
 DEBUG:root:Result: LoopUntilFail (max 5) -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Failure
-DEBUG:root:Result: Sequence: Rush If Stronger -> Failure
+DEBUG:root:Result: Sequence: Attack when ahead -> Failure
 DEBUG:root:Executing:LoopUntilFail (max 5)
 DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
 DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
 DEBUG:root:Result: LoopUntilFail (max 5) -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:1 2 10.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:1 2 8.0
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:1 2 6.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:1 17 6.0
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:1 17 5.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:1 17 5.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:1 11 5.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:1 11 5.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:1 11 5.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:1 11 5.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:1 11 5.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:17 2 35.0
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:17 2 18.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:17 2 16.0
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:1 18 13.0
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:17 2 15.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:1 18 11.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:17 2 10.0
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:1 18 11.0
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:2 9 19.0
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:2 9 20.0
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:17 0 14.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:2 9 27.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:2 9 20.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:2 9 21.0
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:1 0 23.0
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:2 17 15.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:1 0 16.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:9 17 20.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:9 17 21.0
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:9 17 21.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:2 17 20.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:1 0 21.0
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:2 17 15.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:1 0 15.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:9 0 13.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:2 0 15.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:17 0 24.0
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:17 12 23.0
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:1 6 20.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:17 9 21.0
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:2 9 20.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:1 18 18.0
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:2 9 15.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:0 11 22.0
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:0 11 20.0
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:1 18 19.0
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:2 5 18.0
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:1 18 14.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:9 17 21.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:12 17 18.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:2 17 19.0
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:0 17 19.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:1 19 20.0
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:12 17 19.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:18 19 23.0
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:2 5 22.0
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:11 5 20.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:17 20 23.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:1 19 25.0
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:12 6 25.0
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:17 20 34.0
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:2 20 26.0
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:0 6 26.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:11 20 28.0
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:1 6 27.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:12 6 27.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:2 6 25.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:5 6 29.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:19 6 27.5
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
-DEBUG:root:Executing:Selector: Refined Hybrid Strategy
-DEBUG:root:Executing:Sequence: Rush If Stronger
+DEBUG:root:Executing:Selector: Attack and Defend strategy
+DEBUG:root:Executing:Sequence: Attack when ahead
 DEBUG:root:Executing:Check: have_largest_fleet
 DEBUG:root:Result: Check: have_largest_fleet -> Success
 DEBUG:root:Executing:Action: attack_closest_enemy_planet
 DEBUG:root:Order:11 6 29.0
 DEBUG:root:Result: Action: attack_closest_enemy_planet -> Success
-DEBUG:root:Result: Sequence: Rush If Stronger -> Success
-DEBUG:root:Result: Selector: Refined Hybrid Strategy -> Success
+DEBUG:root:Result: Sequence: Attack when ahead -> Success
+DEBUG:root:Result: Selector: Attack and Defend strategy -> Success
 DEBUG:root:Finish turn
 
