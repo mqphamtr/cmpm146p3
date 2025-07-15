@@ -56,10 +56,15 @@ def setup_behavior_tree2():
     rush = Sequence(name='Attack when ahead')
     rush.child_nodes = [
         Check(have_largest_fleet),
+        Inverter(Check(is_enemy_too_far)),
         Action(attack_closest_enemy_planet)
     ]
 
-    expand_loop = LoopUntilFail(Action(spread_to_weakest_neutral_planet), max_iterations=5)     # Looping expansion: spread to neutral planets repeatedly
+    expansion = LoopUntilFail(Action(spread_to_weakest_neutral_planet), max_iterations=5)     # Looping expansion: spread to neutral planets repeatedly
+    # expansion = Sequence(name='Smart Expansion', child_nodes=[
+    #     Inverter(Check(is_enemy_stronger)),
+    #     LoopUntilFail(Action(spread_to_weakest_neutral_planet), max_iterations=3)
+    #     ])
 
     safe_attack = Sequence(name='attack if enemy is not stronger')
     safe_attack.child_nodes = [
@@ -72,7 +77,7 @@ def setup_behavior_tree2():
     desperate_attack = Action(attack_closest_enemy_planet)                                      #when pushed to a corner, desperate attack the enemy
 
     
-    root.child_nodes = [rush, expand_loop, safe_attack, reinforce, desperate_attack]
+    root.child_nodes = [rush, expansion, safe_attack, reinforce, desperate_attack]
 
     logging.info('\n' + root.tree_to_string())
     return root

@@ -2,6 +2,8 @@ INFO:root:
 Selector: Attack and Defend strategy
 | Sequence: Attack when ahead
 | | Check: have_largest_fleet
+| | Inverter
+| | | Check: is_enemy_too_far
 | | Action: attack_closest_enemy_planet
 | LoopUntilFail (max 5)
 | | Action: spread_to_weakest_neutral_planet

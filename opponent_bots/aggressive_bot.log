@@ -84,6 +84,35 @@ DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
 
+DEBUG:root:Order:2 12 58.0
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Order:2 3 4.0
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Order:10 15 63.0
+DEBUG:root:Finish turn
+
+DEBUG:root:Order:0 4 28.0
+DEBUG:root:Finish turn
+
+DEBUG:root:Order:2 3 17.0
+DEBUG:root:Order:8 16 63.0
+DEBUG:root:Finish turn
+
+DEBUG:root:Order:7 0 37.0
 DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
@@ -100,33 +129,34 @@ DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
 
-DEBUG:root:Order:10 3 41.0
-DEBUG:root:Finish turn
-
-DEBUG:root:Order:8 0 52.0
 DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
 
+DEBUG:root:Order:2 3 21.0
 DEBUG:root:Finish turn
 
+DEBUG:root:Order:10 0 49.0
 DEBUG:root:Finish turn
 
-DEBUG:root:Finish turn
-
+DEBUG:root:Order:8 4 50.0
 DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
 
+DEBUG:root:Order:15 11 17.0
+DEBUG:root:Finish turn
+
+DEBUG:root:Order:2 12 26.0
 DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
 
-DEBUG:root:Order:10 4 59.0
+DEBUG:root:Order:10 3 42.0
 DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
@@ -135,6 +165,51 @@ DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
 
+DEBUG:root:Order:2 19 63.0
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Order:8 2 59.0
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Order:10 0 36.0
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Order:2 0 34.0
+DEBUG:root:Finish turn
+
+DEBUG:root:Order:19 12 46.0
 DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn

@@ -22,3 +22,17 @@ def is_enemy_stronger(state):
 
 def has_idle_planet(state):
     return any(p.num_ships > 30 for p in state.my_planets())
+
+def is_enemy_too_far(state):
+    my_planets = state.my_planets()
+    enemy_planets = state.enemy_planets()
+
+    if not my_planets or not enemy_planets:
+        return True  # No good info, assume too far
+
+    min_dist = min(
+        state.distance(m.ID, e.ID)
+        for m in my_planets
+        for e in enemy_planets
+    )
+    return min_dist > 10  # Adjust threshold as needed
