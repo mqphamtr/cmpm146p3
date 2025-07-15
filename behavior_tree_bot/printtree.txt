@@ -1,0 +1,14 @@
+INFO:root:
+Selector: Attack and Defend strategy
+| Sequence: Attack when ahead
+| | Check: have_largest_fleet
+| | Action: attack_closest_enemy_planet
+| LoopUntilFail (max 5)
+| | Action: spread_to_weakest_neutral_planet
+| Sequence: attack if enemy is not stronger
+| | Inverter
+| | | Check: is_enemy_stronger
+| | Action: attack_weakest_enemy_planet
+| AlwaysSucceed
+| | Action: reinforce_weakest_friendly_planet
+| Action: attack_closest_enemy_planet

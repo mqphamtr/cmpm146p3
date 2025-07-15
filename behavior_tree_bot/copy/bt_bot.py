@@ -112,8 +112,6 @@ def setup_behavior_tree3():
     return root
 
 def setup_behavior_tree4():
-    from behavior_tree_bot.bt_nodes import Inverter, AlwaysSucceed, Check, Action, Selector, Sequence
-
     root = Selector(name='Conservative Strategy')
 
     # Attack only if enemy is NOT stronger
