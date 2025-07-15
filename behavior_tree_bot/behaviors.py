@@ -70,18 +70,3 @@ def attack_closest_enemy_planet(state):
         return False
 
     return issue_order(state, source.ID, closest.ID, source.num_ships / 2)
-
-def coordinated_attack_all_planets(state):
-    # Target the weakest enemy planet
-    target = min(state.enemy_planets(), key=lambda p: p.num_ships, default=None)
-    if not target:
-        return False
-
-    success = False
-    for planet in state.my_planets():
-        if planet.num_ships > 20:  # Only send from strong planets
-            num_ships_to_send = planet.num_ships // 2
-            issue_order(state, planet.ID, target.ID, num_ships_to_send)
-            success = True
-
-    return success

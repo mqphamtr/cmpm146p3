@@ -28,11 +28,8 @@ def is_enemy_too_far(state):
     enemy_planets = state.enemy_planets()
 
     if not my_planets or not enemy_planets:
-        return True  # No good info, assume too far
+        return True
 
-    min_dist = min(
-        state.distance(m.ID, e.ID)
-        for m in my_planets
-        for e in enemy_planets
+    min_dist = min(state.distance(m.ID, e.ID) for m in my_planets for e in enemy_planets
     )
-    return min_dist > 10  # Adjust threshold as needed
+    return min_dist > 10
