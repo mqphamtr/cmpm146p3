@@ -51,9 +51,9 @@ def setup_behavior_tree1():
     return root
 
 def setup_behavior_tree2():
-    root = Selector(name='Refined Hybrid Strategy')
+    root = Selector(name='Attack and Defend strategy')
 
-    rush_sequence = Sequence(name='Rush If Stronger')                                           # 1. Aggressive opening: rush enemy if we're ahead
+    rush_sequence = Sequence(name='Attack when ahead')
     rush_sequence.child_nodes = [
         Check(have_largest_fleet),
         Action(attack_closest_enemy_planet)
@@ -61,96 +61,23 @@ def setup_behavior_tree2():
 
     expand_loop = LoopUntilFail(Action(spread_to_weakest_neutral_planet), max_iterations=5)     # 2. Looping expansion: spread to neutral planets repeatedly
 
-    safe_attack_sequence = Sequence(name='Safe Attack')                                         # 3. Safe attack: only attack if enemy isn't stronger
+    safe_attack_sequence = Sequence(name='attack if enemy is not stronger')
     safe_attack_sequence.child_nodes = [
         Inverter(Check(is_enemy_stronger)),
         Action(attack_weakest_enemy_planet)
     ]
     
-    reinforce_optional = AlwaysSucceed(Action(reinforce_weakest_friendly_planet))               # 4. Optional reinforcement: send ships to weak planets if possible
+    reinforce_optional = AlwaysSucceed(Action(reinforce_weakest_friendly_planet))               # give some ships to weak ally
 
-    desperate_attack = Action(attack_closest_enemy_planet)                                      # 5. Emergency fallback: desperation attack if nothing else worked
+    desperate_attack = Action(attack_closest_enemy_planet)                                      #when pushed to a corner, desperate attack the enemy
 
     
     root.child_nodes = [                                                                        # Priority order matters here
-        rush_sequence,           # Smart early aggression
-        expand_loop,             # Rapid expansion
-        safe_attack_sequence,    # Safe midgame offense
-        reinforce_optional,      # Passive defense (never blocks)
-        desperate_attack         # Keeps bot from stalling
-    ]
-
-    logging.info('\n' + root.tree_to_string())
-    return root
-
-def setup_behavior_tree3():
-    root = Selector(name='Greedy Expander Strategy')
-
-    # Loop spreading to neutral planets
-    loop_spread = LoopUntilFail(Action(spread_to_weakest_neutral_planet), max_iterations=5)
-
-    # Only attack if we have a larger fleet
-    safe_attack_sequence = Sequence(name='Safe Attack')
-    safe_attack_sequence.child_nodes = [
-        Check(have_largest_fleet),
-        Action(attack_weakest_enemy_planet)
-    ]
-
-    root.child_nodes = [
-        loop_spread,
-        safe_attack_sequence
-    ]
-
-    logging.info('\n' + root.tree_to_string())
-    return root
-
-def setup_behavior_tree4():
-    root = Selector(name='Conservative Strategy')
-
-    # Attack only if enemy is NOT stronger
-    conditional_attack = Sequence(name='Attack If Safe')
-    conditional_attack.child_nodes = [
-        Inverter(Check(is_enemy_stronger)),
-        Action(attack_weakest_enemy_planet)
-    ]
-
-    # Spread to weakest neutral if possible
-    spread_sequence = Sequence(name='Spread')
-    spread_sequence.child_nodes = [
-        Check(if_neutral_planet_available),
-        Action(spread_to_weakest_neutral_planet)
-    ]
-
-    # Reinforce weak friendly planets (optional fallback)
-    reinforce_optional = AlwaysSucceed(Action(reinforce_weakest_friendly_planet))
-
-    # Priority order: attack > expand > reinforce
-    root.child_nodes = [
-        conditional_attack,
-        spread_sequence,
-        reinforce_optional
-    ]
-
-    logging.info('\n' + root.tree_to_string())
-    return root
-
-
-def setup_behavior_tree5():
-    root = Selector(name='Aggressive Rush Strategy')
-
-    # Immediate rush toward closest enemy
-    rush_attack = Action(attack_closest_enemy_planet)
-
-    # Expand aggressively while neutrals exist
-    spread_loop = LoopUntilFail(Action(spread_to_weakest_neutral_planet), max_iterations=5)
-
-    # Fallback attack in case above fails
-    fallback_attack = Action(attack_weakest_enemy_planet)
-
-    root.child_nodes = [
-        rush_attack,
-        spread_loop,
-        fallback_attack
+        rush_sequence,              #early attempt to get rid of closest enemy        
+        expand_loop,                #try to capture 5 neutral planets
+        safe_attack_sequence,       #attack weakest enemy, if we are not weaker
+        reinforce_optional,         #send support to our weakest ally
+        desperate_attack            #go out fighting
     ]
 
     logging.info('\n' + root.tree_to_string())
